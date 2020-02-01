@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartBildschirm.unity
     guid: f1a7180be07a54145bf8b45f3f57f463
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 26c5721f5cfdc7b45876c9f5b9a6794d,
+      type: 2}

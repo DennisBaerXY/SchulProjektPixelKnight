@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public float jumpfHeight;
     Vector3 movementX;
+    bool looksright = true;
 
    
 
@@ -22,7 +24,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
+        if (Input.GetAxis("Horizontal") > 0 && !looksright || Input.GetAxis("Horizontal") < 0 && looksright)
+        {
+            Flip();
+        }
         Jump();
     }
 
@@ -34,8 +44,8 @@ public class Movement : MonoBehaviour
 
         transform.position += movementX * Time.fixedDeltaTime * speed;
 
-        
 
+       
 
     }
 
@@ -47,5 +57,23 @@ public class Movement : MonoBehaviour
         }
         
     }
-    
+
+    void Flip()
+    {
+        looksright = !looksright;
+        Vector3 Charflip = transform.localScale;
+        Charflip.x *= -1;
+
+
+        transform.localScale = Charflip;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Weapon")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 }
