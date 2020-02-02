@@ -166,7 +166,9 @@ public class GameLevelManager : MonoBehaviour
         PlayerPrefs.SetString("level1Finished", "false");
      
         PlayerPrefs.SetString("level2Finished", "false");
-        
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
 
     }
             
