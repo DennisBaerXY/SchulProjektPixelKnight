@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartBildschirm.unity
     guid: f1a7180be07a54145bf8b45f3f57f463
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: e64861e270d9e1c4a80c8cec1870bf7d
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 25fd678afdb8aed4cb1227f45fe92a95
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 505f8aa465842834690f7165de1890e3
+  - enabled: 1
+    path: Assets/Scenes/LevelSelector.unity
+    guid: bdcba04f6a0eb744b81190618568bee3
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 26c5721f5cfdc7b45876c9f5b9a6794d,
       type: 2}

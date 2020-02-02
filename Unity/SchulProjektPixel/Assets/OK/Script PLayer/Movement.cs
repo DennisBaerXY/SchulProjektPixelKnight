@@ -11,14 +11,20 @@ public class Movement : MonoBehaviour
     public float jumpfHeight;
     Vector3 movementX;
     bool looksright = true;
+    public GameObject manager;
+    GameLevelManager gamemanager;
 
-   
+    public bool Godmode;
 
-   
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>(); 
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        gamemanager = manager.GetComponent<GameLevelManager>();
+        
     }
 
     // Update is called once per frame
@@ -73,7 +79,18 @@ public class Movement : MonoBehaviour
     {
         if (collision.collider.tag == "Weapon")
         {
+            GameLevelManager.AddDeath();
+            print("Died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                
+
+
+            
+           
         }
+
+       
     }
+
+   
 }
